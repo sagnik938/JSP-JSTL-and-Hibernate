@@ -12,6 +12,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%-- 
+
 <!-- set and out tag -->
 <c:set var = 'i' value = "25"></c:set>
 <h2><c:out value = "${i}"></c:out></h2>
@@ -30,6 +33,7 @@
 <c:forEach var='j' begin="1" end="10">
 	<c:out value="${j}"></c:out>
 </c:forEach>
+--%>
 
 <%-- 
 <!-- urls -->

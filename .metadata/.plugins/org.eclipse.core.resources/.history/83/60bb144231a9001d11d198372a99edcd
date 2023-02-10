@@ -1,0 +1,47 @@
+package com.hql;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class HQLDemo {
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("com/hiberatetest/HibernateTest/hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+
+//		String query = "from Student";
+//		Query query2 = session.createQuery(query);
+//		List<Student> ls = query2.list();
+//		ls.stream().map(s -> s.getName()).forEach(System.out::println);
+//		session.close();
+
+//		String query = "from Student where city='Kol'";
+//		Query query2 = session.createQuery(query);
+//		List<Student> ls = query2.list();
+//		ls.stream().map(s -> s.getName()).forEach(System.out::println);
+//		session.close();
+
+//		String query = "from Student where city=:x";
+//		Query query2 = session.createQuery(query);
+//		query2.setParameter("x", "Kol");
+//		List<Student> ls = query2.list();
+//		ls.stream().map(s -> s.getName()).forEach(System.out::println);
+//		session.close();
+
+		/* Update */
+		String query = "update Student set city=:x where id:y";
+		Query query2 = session.createQuery(query);
+		query2.setParameter("x", "Jaipur");
+		query2.setParameter("y", 101);
+		int count = query2.executeUpdate();
+		System.out.println(count);
+		transaction.commit();
+		session.close();
+
+	}
+}
