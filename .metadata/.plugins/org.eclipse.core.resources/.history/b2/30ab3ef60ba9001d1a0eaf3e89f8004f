@@ -1,0 +1,35 @@
+package com.map;
+
+import java.util.ArrayList;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("com/map/hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		
+		ArrayList<Answer> answers=new ArrayList<Answer>();
+		for(int i=0;i<10;i++) {
+			answers.add( new Answer(500+i,"testanswer"+i);
+		}
+		
+		Question q1 = new Question(100, "test1?", a1);
+		Question q2 = new Question(101, "test2?", a1);
+
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+
+		session.save(a1);
+		session.save(q1);
+		transaction.commit();
+		session.close();
+
+	}
+
+}

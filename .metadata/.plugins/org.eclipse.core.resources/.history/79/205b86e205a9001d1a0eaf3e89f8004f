@@ -1,0 +1,16 @@
+package com.map;
+
+import javax.management.loading.PrivateClassLoader;
+import javax.persistence.Id;
+
+public class Question {
+	
+	@Id
+	private String questionID;
+	private String questionContent;
+	private Answer answer;
+	
+	public Question() {
+		super();
+	}
+}

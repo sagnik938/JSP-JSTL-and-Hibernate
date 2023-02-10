@@ -1,0 +1,32 @@
+package com.ManytoMany;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Employee {
+
+	@Id
+	int id;
+	String name;
+
+	@ManyToMany
+	List<Project> projects;
+	public Employee() {
+		super();
+	}
+	
+	public Employee(int id, String name, List<Project> projects) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.projects = projects;
+	}
+
+	
+	
+	
+}

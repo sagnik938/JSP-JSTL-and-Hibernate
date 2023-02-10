@@ -1,0 +1,25 @@
+package com.map;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("com/hiberatetest/HibernateTest/hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+
+		Answer a1 = new Answer(500, "Sagnik");
+		Question q1 = new Question(100, "What is your name?", a1);
+
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();
+
+		session.save(q1);
+
+	}
+
+}

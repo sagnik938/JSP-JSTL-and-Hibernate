@@ -1,0 +1,20 @@
+package com.map;
+
+import javax.persistence.Id;
+
+public class Answer {
+	@Id
+	private int id;
+	private String answerContent;
+
+	public Answer() {
+		super();
+	}
+
+	public Answer(int id, String answerContent) {
+		super();
+		this.id = id;
+		this.answerContent = answerContent;
+	}
+
+}

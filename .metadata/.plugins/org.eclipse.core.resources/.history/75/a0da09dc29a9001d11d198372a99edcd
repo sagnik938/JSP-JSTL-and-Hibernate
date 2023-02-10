@@ -1,0 +1,12 @@
+package com.hql;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HQLDemo {
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("com/ManytoMany/hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+	}
+}

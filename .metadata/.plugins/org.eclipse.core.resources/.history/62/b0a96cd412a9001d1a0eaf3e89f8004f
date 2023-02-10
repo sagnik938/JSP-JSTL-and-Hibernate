@@ -1,0 +1,30 @@
+package com.ManytoMany;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class ManytoManyDemo {
+
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("com/map/hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+
+		Employee e1 = new Employee();
+		Employee e2 = new Employee();
+
+		e1.setId(101);
+		e2.setId(102);
+		e1.setName("Raj");
+		e2.setName("Taj");
+
+		Employee e1 = new Employee();
+		Employee e2 = new Employee();
+		e1.setId(101);
+		e2.setId(102);
+		e1.setName("Raj");
+		e2.setName("Taj");
+
+	}
+
+}
