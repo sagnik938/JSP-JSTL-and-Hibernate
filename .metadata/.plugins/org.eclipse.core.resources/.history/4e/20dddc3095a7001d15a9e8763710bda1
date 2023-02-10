@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo Dynamic</title>
+</head>
+<body>
+Welcome to Dynamic Project
+<form action="first.jsp">
+Enter a number:<input name="num1" type = "text"/>
+Enter another number:<input name="num2" type = "text"/>
+<input type = "submit">
+<button onclick = "jstldemo.jsp">JSTL DEMO</button>
+</form>
+</body>
+</html>

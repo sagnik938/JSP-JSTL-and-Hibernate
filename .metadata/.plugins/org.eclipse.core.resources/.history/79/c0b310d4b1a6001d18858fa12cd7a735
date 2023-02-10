@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo Dynamic</title>
+</head>
+<body>
+Welcome to Dynamic Project
+<form>
+Enter a number:<input type = "text"/>
+Enter another number:<input type = "text"/>
+<input type = "submit">
+</form>
+</body>
+</html>

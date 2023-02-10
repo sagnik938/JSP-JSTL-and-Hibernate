@@ -1,0 +1,27 @@
+package com.form.assignment;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.*;
+
+public class FormServlet extends HttpServlet {
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse res ) {
+
+		String name = req.getParameter("name");
+		String pass = req.getParameter("password");
+		String email = req.getParameter("email");
+		String Gender = req.getParameter("gender");
+		String course = req.getParameter("course");
+		
+		try {
+			PrintWriter out = res.getWriter();
+			out.println("Result is " + result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

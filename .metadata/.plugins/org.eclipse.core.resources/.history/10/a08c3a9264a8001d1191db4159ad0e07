@@ -1,0 +1,36 @@
+package com.hiberatetest.HibernateTest;
+import org.hibernate.Transaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+
+		/**
+		 * Session factory is an interface so we cannot create objects Create a config
+		 * object
+		 */
+		Configuration cfg = new Configuration();
+		cfg.configure("com/hiberatetest/HibernateTest/hibernate.cfg.xml");
+		SessionFactory s = cfg.buildSessionFactory();
+		System.out.println(s);
+
+		Student student = new Student(100, "Swairik", "Delhi");
+		System.out.println(student);
+		
+		Session session = s.openSession();
+		Transaction tx = session.beginTransaction();
+		session.save(student);
+		tx.commit();
+		session.close();
+		System.out.println("Creation done");
+		
+	}
+}

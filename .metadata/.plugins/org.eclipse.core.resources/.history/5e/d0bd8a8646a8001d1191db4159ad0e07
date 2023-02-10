@@ -1,0 +1,21 @@
+package com.registration.controller;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import com.registration.Dao.EmployeeDao;
+import com.registration.model.Employee;
+
+@WebServlet("/EmployeeServlet")
+public class EmployeeServlet extends HttpServlet {
+	
+	EmployeeDao employeeDao;
+	@Override
+	public void init() throws ServletException {
+		employeeDao = new EmployeeDao();
+		
+	}
+	
+
+}

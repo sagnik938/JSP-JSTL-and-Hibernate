@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<% 
+	String user = request.getParameter("username");
+	String pass = request.getParameter("pass");
+	
+	if(user == null || pass == null){
+		throw new Exception("Username and Password cannot be blank");
+	}
+	else if(user.equals("sagniks") || pass .equals("12345")){
+		throw new Exception("Incorrect Username/Password");
+	}
+	else{
+		out.println("User: "+user);
+		out.println("Pass: "+pass);
+	}
+	%>
+</body>
+</html>

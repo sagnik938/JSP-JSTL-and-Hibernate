@@ -1,0 +1,71 @@
+package com.hiberatetest.HibernateTest;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+
+		/**
+		 * Session factory is an interface so we cannot create objects Create a config
+		 * object
+		 */
+		Configuration cfg = new Configuration();
+		cfg.configure("com/hiberatetest/HibernateTest/hibernate.cfg.xml");
+		SessionFactory s = cfg.buildSessionFactory();
+//		System.out.println(s);
+
+		Student student = new Student(100, "Swairik", "Delhi");
+		Student student2 = new Student(101, "Sagnik", "Kolkata");
+		System.out.println(student);
+
+		Session session = s.openSession();
+		Transaction tx = session.beginTransaction();
+//		// session.save(student);
+//		session.save(student2);
+//		tx.commit();
+//		session.close();
+//		System.out.println("Creation done");
+
+//		//Getting data..
+
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter Student Id");
+//
+//		try {
+//			/**
+//			 * This returns exception... Lazy initialization not until fetched data is used.
+//			 */
+//
+////			Student reqStudent = (Student) session.load(Student.class, sc.nextInt());
+//
+//			/**
+//			 * This returns null... Will always hit the DB no need for try catch block bad
+//			 * for performance
+//			 */
+//			Student reqStudent = (Student) session.get(Student.class, sc.nextInt());
+//			System.out.println(reqStudent);
+//
+//		} catch (Exception e) {
+//			System.out.println("Record not found");
+//		}
+		
+		//Updating the data...
+		try {
+			System.out.println("Enter ID for update");
+			Student testUpdateStudent=(Student)(session.load(Student.class, sc.nextInt()));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+}

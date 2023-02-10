@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form Assignment</title>
+</head>
+<body>
+<form action="registration" >
+Enter name: <input type = "text" name = "name">
+Enter password: <input type = "password" name = "password">
+Enter email: <input type = "email" name = "email">
+Select Gender: M<input type = "radio" name ="gender">F:<input type = "radio" name ="gender">
+
+</form>
+</body>
+</html>

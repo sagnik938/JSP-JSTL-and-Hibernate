@@ -1,0 +1,43 @@
+package formdemo;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+
+public class AddServlet extends HttpServlet {
+	
+	public void service(HttpServletRequest req, HttpServletResponse res ) {
+		int a = Integer.parseInt(req.getParameter("num1"));
+		int b = Integer.parseInt(req.getParameter("num2"));
+		int result = a+b;
+		//System.out.println(result);
+		
+		try {
+			PrintWriter out = res.getWriter();
+			out.println("Result is " + result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		req.setAttribute("result",result);
+		RequestDispatcher reqD = req.getRequestDispatcher("/square");
+		
+//		try {
+//			reqD.forward(req,res);
+//		} catch (ServletException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		try {
+			res.sendRedirect("square?result="+result); //url rewriting
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+
+}

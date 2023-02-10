@@ -1,0 +1,10 @@
+package formdemo;
+
+import javax.servlet.http.*;
+
+public class SquareServlet extends HttpServlet {
+	public void service(HttpServletRequest req , HttpServletResponse res) {
+		/*...*/
+	}
+
+}

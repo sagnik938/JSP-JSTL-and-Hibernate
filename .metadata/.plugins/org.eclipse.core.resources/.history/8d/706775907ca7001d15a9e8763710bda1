@@ -1,0 +1,30 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Declarative tag to specify things above service method -->
+
+<%!
+int sq(int num){
+	return(num*num);
+}
+%>
+
+<!-- this is a scriplet tag it goes in the service method of servlet generated -->
+<%
+int i = Integer.parseInt(request.getParameter("num1"));
+int j = Integer.parseInt(request.getParameter("num2"));
+out.println(i+j);
+out.println(sq(i+j));
+%>
+<!-- This is an expression tag -->
+<%="Expression tag" %>
+<%=" sq of addition value is: " + sq(i+j) %>
+</body>
+</html>

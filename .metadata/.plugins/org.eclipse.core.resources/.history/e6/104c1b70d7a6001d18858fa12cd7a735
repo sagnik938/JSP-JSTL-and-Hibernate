@@ -1,0 +1,24 @@
+package formdemo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.*;
+
+public class SquareServlet extends HttpServlet {
+	public void service(HttpServletRequest req , HttpServletResponse res) {
+		//int r = (int)(req.getAttribute("result"));
+		//String result = req.getParameter("result");
+		
+		HttpSession session1 = req.getSession();
+		int result = (int)(session1.getAttribute("result"));
+		
+		try {
+			PrintWriter out = res.getWriter();
+			out.println("In sq servlet " + result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

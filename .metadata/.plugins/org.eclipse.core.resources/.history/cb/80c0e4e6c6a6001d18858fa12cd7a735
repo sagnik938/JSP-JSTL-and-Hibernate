@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form Assignment</title>
+</head>
+<body>
+<form action="registration" >
+Enter name: <input type = "text" name = "name">
+<br>
+<br>
+Enter password: <input type = "password" name = "password">
+<br>
+<br>
+Enter email: <input type = "email" name = "email">
+<br>
+<br>
+Select Gender: M<input type = "radio" name ="gender">F:<input type = "radio" name ="gender">
+<br>
+<br>
+Select course:<select name="cars">
+  <option value="Python">Python</option>
+  <option value="Java">Java</option>
+  <option value="CPP">CPP</option>
+  <option value="PHP">PHP</option>
+</select>
+
+
+</form>
+</body>
+</html>
